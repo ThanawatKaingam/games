@@ -3,7 +3,7 @@
     <button @click="randomStart()" class="startButton" type="button">Start</button>
     <div class="row">
       <div class="col">
-        <button @click="randomDamage(50,70)" class="attackButton" type="button">Attack</button>
+        <button @click="randomDamage(50,70)" class="attackButton" type="button" >Attack</button>
         <button @click="randomDamageSP(100,150)" class="specialAttackButton" type="button">SP Attack</button>
       </div>
     </div>
@@ -26,7 +26,7 @@
 <script>
 export default {
   
-  data() {
+  data: function () {
     return {
       randomAttack: "",
       randomSpAttack: "",
@@ -101,11 +101,11 @@ export default {
       if (this.hp1 != 0 && this.hp2 != 0) {
         this.hp2 -= this.randomAttack;
       }
-      if (this.hp1 <= 0) {
+      if (this.hp1 <= 0 ) {
         this.hp1 = 0;
         this.image1 = this.lose;
       }
-      if (this.hp2 <= 0) {
+      if (this.hp2 <= 0 && this.hp1 != 0) {
         this.hp2 = 0;
         this.image2 = this.win;
       }
@@ -124,13 +124,14 @@ export default {
         this.hp1 = 0;
         this.image1 = this.lose;
       }
-      if (this.hp2 <= 0) {
+      if (this.hp2 <= 0 && this.hp1 != 0) {
         this.hp2 = 0;
         this.image2 = this.win;
       }
     },
   },
 };
+
 </script>
 
 <style scoped>

@@ -26,10 +26,10 @@ export default {
   padding: 3em;
 }
 body { 
-  background-image: url("./assets/img/bg.gif"); 
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("./assets/img/bg.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 </style>
